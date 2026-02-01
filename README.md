@@ -46,7 +46,7 @@ This simulator is **simple, educational, and fully interactive via command-line 
   Follow the prompts to create transactions, view the UTXO state, inspect the mempool, and simulate mining.
   ---
 
-  ##Brief Explaination of our Design
+  ### Brief Explaination of our Design
 
   Our simulator is designed using a clean, modular structure that reflects the core architecture of Bitcoin's UTXO model.
 
