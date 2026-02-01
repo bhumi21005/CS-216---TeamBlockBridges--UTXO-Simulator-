@@ -17,15 +17,13 @@ This simulator is **simple, educational, and fully interactive via command-line 
 ---
 
  ### Instructions to run the program 
-  -1.**Clone or download** these repository.
-  -2.Open a terminal / Command prompt.
-  ---
-  -3.Navigate to the 'src/'directory:
 
-  '''
-  cd src
-  '''
-  ---
+ 1.  **Clone or Download**: Download this repository to your local machine.
+2.  **Open Terminal**: Open your Terminal or Command Prompt.
+3.  **Navigate to Source**: Go to the `src` directory by running:
+    ```bash
+    cd src
+    ```
   4.Make sure python **3.8 or above** is installed.
   5. Run the main program.:
 
