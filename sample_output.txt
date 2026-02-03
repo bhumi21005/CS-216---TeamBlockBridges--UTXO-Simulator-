@@ -466,4 +466,28 @@ Amount: 4
 Fee (Enter for 0.001): 
 
 [!] FAILED: REJECT: Double-spend (Mempool)
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 1
+Sender: Alice
+-----------------------------------
+      ALICE'S AVAILABLE UTXOs
+-----------------------------------
+Ref: genesis:0     | Amount:   50.0 BTC
+-----------------------------------
+Recipient: Bob
+Amount: 60
+Fee (Enter for 0.001): 
+
+[!] FAILED: Insufficient balance
+
 
