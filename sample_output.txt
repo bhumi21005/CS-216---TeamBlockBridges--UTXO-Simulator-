@@ -178,3 +178,292 @@ Owner: kumkum   | Amt:  100.0 BTC | airdrop_e5f2:0
 Choice: 7
 
 === Code Execution Successful ===
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 1
+Sender: Alice
+-----------------------------------
+      ALICE'S AVAILABLE UTXOs
+-----------------------------------
+Ref: genesis:0     | Amount:   50.0 BTC
+-----------------------------------
+Recipient: Bob
+Amount: 20
+Fee (Enter for 0.001): 
+-----------------------------------
+      TRANSACTION RECEIPT
+ID     : TX-7770AAB0
+Status : SUCCESS
+Fee    : 0.001 BTC
+Mempool: 1 pending
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 3
+
+-----------------------------------
+      MEMPOOL STATUS
+-----------------------------------
+• TX-7770AAB0 | Fee: 0.001
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 4
+-----------------------------------
+      BLOCK MINED
+Miner  : Miner1
+TXs    : 1
+Rewards: 0.001 BTC
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 2
+
+-----------------------------------
+      GLOBAL UTXO SET
+-----------------------------------
+Owner: Alice    | Amt: 29.999 BTC | TX-7770AAB0:1
+Owner: Bob      | Amt:   30.0 BTC | genesis:1
+Owner: Bob      | Amt:   20.0 BTC | TX-7770AAB0:0
+Owner: Charlie  | Amt:   20.0 BTC | genesis:2
+Owner: David    | Amt:   10.0 BTC | genesis:3
+Owner: Eve      | Amt:    5.0 BTC | genesis:4
+Owner: Miner1   | Amt:  0.001 BTC | coinbase_c762e4:0
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 1
+Sender: Bob
+-----------------------------------
+      BOB'S AVAILABLE UTXOs
+-----------------------------------
+Ref: genesis:1     | Amount:   30.0 BTC
+Ref: TX-7770AAB0:0     | Amount:   20.0 BTC
+-----------------------------------
+Recipient: Eve
+Amount: 40
+Fee (Enter for 0.001): 
+-----------------------------------
+      TRANSACTION RECEIPT
+ID     : TX-6A4118EB
+Status : SUCCESS
+Fee    : 0.001 BTC
+Mempool: 1 pending
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 1
+Sender: Bob
+-----------------------------------
+      BOB'S AVAILABLE UTXOs
+-----------------------------------
+Ref: genesis:1     | Amount:   30.0 BTC
+Ref: TX-7770AAB0:0     | Amount:   20.0 BTC
+-----------------------------------
+Recipient: 4
+Amount: ERROR!
+
+
+[!] Error: could not convert string to float: ''
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 2
+
+-----------------------------------
+      GLOBAL UTXO SET
+-----------------------------------
+Owner: Alice    | Amt: 29.999 BTC | TX-7770AAB0:1
+Owner: Bob      | Amt:   30.0 BTC | genesis:1
+Owner: Bob      | Amt:   20.0 BTC | TX-7770AAB0:0
+Owner: Charlie  | Amt:   20.0 BTC | genesis:2
+Owner: David    | Amt:   10.0 BTC | genesis:3
+Owner: Eve      | Amt:    5.0 BTC | genesis:4
+Owner: Miner1   | Amt:  0.001 BTC | coinbase_c762e4:0
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 3
+
+-----------------------------------
+      MEMPOOL STATUS
+-----------------------------------
+• TX-6A4118EB | Fee: 0.001
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 4
+-----------------------------------
+      BLOCK MINED
+Miner  : Miner1
+TXs    : 1
+Rewards: 0.001 BTC
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 2
+
+-----------------------------------
+      GLOBAL UTXO SET
+-----------------------------------
+Owner: Alice    | Amt: 29.999 BTC | TX-7770AAB0:1
+Owner: Bob      | Amt:  9.999 BTC | TX-6A4118EB:1
+Owner: Charlie  | Amt:   20.0 BTC | genesis:2
+Owner: David    | Amt:   10.0 BTC | genesis:3
+Owner: Eve      | Amt:    5.0 BTC | genesis:4
+Owner: Eve      | Amt:   40.0 BTC | TX-6A4118EB:0
+Owner: Miner1   | Amt:  0.001 BTC | coinbase_c762e4:0
+Owner: Miner1   | Amt:  0.001 BTC | coinbase_388510:0
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 1
+Sender: Bob
+-----------------------------------
+      BOB'S AVAILABLE UTXOs
+-----------------------------------
+Ref: TX-6A4118EB:1     | Amount:  9.999 BTC
+-----------------------------------
+Recipient: Alice
+Amount: 6
+Fee (Enter for 0.001): 
+-----------------------------------
+      TRANSACTION RECEIPT
+ID     : TX-A3B13E8D
+Status : SUCCESS
+Fee    : 0.001 BTC
+Mempool: 1 pending
+-----------------------------------
+
+═══════════════════════════════════
+     BITCOIN UTXO SIMULATOR
+═══════════════════════════════════
+1. Create TX
+2. View UTXO Set
+3. View Mempool
+4. Mine Block
+5. Run Mandatory Tests
+6. Add User
+7. Exit
+
+Choice: 1
+Sender: Bob
+-----------------------------------
+      BOB'S AVAILABLE UTXOs
+-----------------------------------
+Ref: TX-6A4118EB:1     | Amount:  9.999 BTC
+-----------------------------------
+Recipient: Eve
+Amount: 4
+Fee (Enter for 0.001): 
+
+[!] FAILED: REJECT: Double-spend (Mempool)
+
