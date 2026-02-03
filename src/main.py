@@ -1,4 +1,5 @@
 import uuid
+import random
 def smart_create_tx(sender, receiver, amount, fee=0.001):
     utxos = um.get_utxos_for_owner(sender)
     selected_inputs, accumulated = [], 0
