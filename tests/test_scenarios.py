@@ -1,5 +1,3 @@
-
-# PART 5: THE COMPLETE 10-TEST SUITE
 def run_mandatory_tests():
     print("\n" + "═"*60)
     print("      DETAILED TEST SUITE: ALL 10 MANDATORY CASES")
