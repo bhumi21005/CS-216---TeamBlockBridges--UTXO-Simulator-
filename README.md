@@ -12,7 +12,7 @@
 ---
 ## 👥 Team Information
 
-**Team Name:** HighOnByte  
+**Team Name:** BlockBridges 
 
 **Team Members:**
 
