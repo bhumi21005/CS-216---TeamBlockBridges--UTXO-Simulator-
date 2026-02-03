@@ -1,112 +1,76 @@
-# CS-216---TeamBlockBridges--UTXO-Simulator
-
+# Bitcoin Transaction & UTXO Simulator  
+**CS 216 – Introduction to Blockchain**
 
 ---
-### Project Overview
 
-This project is a complete simulation of the **Bitcoin UTXO (Unspent Transactions output)** model - implemented from scratch without using any Blockchain libraries. It demonstrates how bitcoin manages coins, validate transactions, prevent double spending, and confirm transactions via mining. 
-This simulator is **simple, educational, and fully interactive via command-line menu** -  perfect for understanding real bitcoin mechanics.
----
-### Team Members
-- **Shruti Gajanan Turare** (240008029)  
-- **Bhumika Kumari** (240051006)  
-- **Kumkum Kushwaha** (240004028)  
-- **Mhaske Prajwal Sanjay** (240004033)
+## Course Information
+
+**Course:** CS 216 – Introduction to Blockchain  
+**Assignment:** Bitcoin Transaction & UTXO Simulator  
+**Submission Type:** Public GitHub Repository  
+
 ---
 
-### Learning Outcomes
+## Overview
 
- **By completing this assignment, we demonstrate:**
+This project presents a **Python-based simulation of Bitcoin’s transaction mechanism**, centered around the **UTXO (Unspent Transaction Output) model**.  
+The simulator explains how Bitcoin-style transactions are created, verified, queued, and confirmed through mining, while ensuring that **double-spending is strictly prevented**.
 
-- **Clear understanding of the UTXO-based accounting model**
+The implementation strictly follows the **CS 216 assignment guidelines** and is intentionally designed as a **local, single-node system**.  
+No networking, cryptography, or consensus algorithms are included, keeping the focus on **core transaction logic**.
 
-- **Correct validation of Bitcoin-like transactions**
+---
 
-- **Robust double-spending prevention**
+##  Objectives of the Project
 
-- **Simulation of the full transaction lifecycle**
+Through this assignment, we aim to demonstrate:
 
-- **Practical insight into transaction fees and miner incentives**
+- Conceptual understanding of the **UTXO-based accounting system**
+- Implementation of **Bitcoin-like transaction validation**
+- Prevention of **double-spending using UTXO and mempool checks**
+- Simulation of the **transaction lifecycle**
+- Insight into **transaction fees and miner rewards**
 
-- **Experience in modular system design using Python**
+---
 
- ### Instructions to run the program 
+##  Features Implemented
 
- 1.  **Clone or Download**: Download this repository to your local machine.
-2.  **Open Terminal**: Open your Terminal or Command Prompt.
-3.  **Navigate to Source**: Go to the `src` directory by running:
-    ```bash
-    cd src
-    ```
-  4.Make sure python **3.8 or above** is installed.
-  5. Run the main program.:
+### 1️ UTXO Management
 
+#### Concept
 
+Bitcoin does not store balances directly.  
+Instead, it keeps track of **unspent outputs** created by previous transactions.
 
-  ```bash
-  python main.py
-  ```
+Important properties of UTXOs:
 
-  6. You will see the interactive menu:
-  '''
-  ===Bitcoin Trasaction Simulator===
-  1. Create new transaction
-  2. View UTXO set
-  3. View mempool
-  4. Mine block
-  5. Exit
+- Each UTXO represents a **spendable unit of Bitcoin**
+- A UTXO is always **fully consumed** when spent
+- New UTXOs are generated as transaction outputs
+- User balance = **sum of all owned UTXOs**
 
-  ---
-  Follow the prompts to create transactions, view the UTXO state, inspect the mempool, and simulate mining.
-  ---
+💡 **Analogy:**  
+UTXOs behave like physical currency notes — you cannot tear a note to pay half; you spend it fully and receive change.
 
-  ### Brief Explaination of our Design
+#### Implementation Highlights
 
-  Our simulator is designed using a clean, modular structure that reflects the core architecture of Bitcoin's UTXO model.
+- UTXOs stored in a dictionary for constant-time lookup
+- Each UTXO identified by `(transaction_id, output_index)`
+- Snapshot and rollback mechanism used during mining failures
+- Balance calculated dynamically by scanning owned UTXOs
 
-  ### UTXO Manager
-  Maintains all unspent outputs.
-  It allows: 
-  - Adding new UTXOs  
-  - Removing spent UTXOs  
-  - Checking ownership  
-  - Calculating balances  
+---
 
-  ###  Transaction Structure  
-  Each transaction contains inputs (UTXOs being spent) and outputs (new UTXOs created).  
-  Every transaction is assigned a unique, auto-generated ID.
+### 2️ Transaction Creation & Structure
 
-  ###  Validator  
-  The validator enforces all required rules:
-  - Inputs must exist in the UTXO set  
-  - No duplicate inputs  
-  - Input amount ≥ Output amount  
-  - No negative outputs  
-  - No mempool conflicts (prevents double spending)  
+A transaction converts **existing UTXOs into new ones**.
 
-  ### Mempool  
-  Stores valid but unconfirmed transactions.  
-  Tracks UTXOs currently “reserved” by pending transactions to avoid conflicts.
+Each transaction includes:
+- Input references to previous UTXOs
+- Output definitions for recipients and change
+- An implicit transaction fee
 
-  ###  Mining Logic  
-  Simulates block creation:
-  - Selects transactions from the mempool  
-  - Removes input UTXOs  
-  - Adds output UTXOs  
-  - Awards miner fees  
-  - Clears mined transactions from the mempool  
-
- ###  Overall Design Choice  
-  The system is intentionally lightweight and uses only Python’s standard library.  
-  There is **no networking, no cryptography, and no distributed consensus** — only the core transaction and UTXO logic required by the assignment.
-
-  ---
-
-  ##  Dependencies / Installation
-
-  No external libraries are needed.  
-  The simulator runs entirely on Python's built-in standard library.
-
-  ---
-
-  ##  End of README
+Transaction flow:
+Bash```
+Create → Validate → Mempool → Mine → Confirm 
+```
